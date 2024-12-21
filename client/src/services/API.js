@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: process.env.REACT_APP_OLD_BASEURL });
+const API = axios.create({
+  baseURL: "https://blood-bank-app-main-tan.vercel.app/api/v1",
+});
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("token")) {
