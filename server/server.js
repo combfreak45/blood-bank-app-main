@@ -26,11 +26,16 @@ const app = express();
 // Apply middlewares
 app.use(express.json()); // Parse JSON bodies
 app.use(cors()); // Enable Cross-Origin Resource Sharing
-app.use (cors ({
-origin: ["http://localhost:3000"],
-methods: ["GET", "POST", "PUT", "DELETE"],
-credentials: true,}
-)) ;
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://blood-bank-app-main-hnaz.vercel.app",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(morgan("dev")); // Log HTTP requests
 
 // Define routes
