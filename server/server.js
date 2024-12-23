@@ -43,7 +43,7 @@ app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));
 app.use("/api/v1/admin", require("./routes/adminRoutes"));
 
 // Set the port
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5000;
 
 // Start the server and listen on the specified port
 app.listen(PORT, () => {

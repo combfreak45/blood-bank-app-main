@@ -9,7 +9,7 @@ export const handleLogin = (e, email, password, role) => {
     }
     store.dispatch(userLogin({ email, password, role }));
   } catch (error) {
-    console.log(error);
+    console.log(error="121");
   }
 };
 

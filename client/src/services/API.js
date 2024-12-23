@@ -1,14 +1,10 @@
 import axios from "axios";
 
-const API = axios.create({
-  baseURL: "https://blood-bank-app-main-tan.vercel.app/api/v1",
-});
+const API = axios.create({ baseURL: process.env.REACT_APP_OLD_BASEURL });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("token")) {
-    req.headers.Authorization = `Bearer ${localStorage
-      .getItem("token")
-      .trim()} `;
+    req.headers.Authorization = `Bearer ${localStorage.getItem("token").trim()} `;
   }
   return req;
 });
